@@ -53,6 +53,23 @@ Synchronizing working set with resolved packages: 9 to add, 0 to update, 0 to re
 
 🎉 All complete!
 
+pdm add -dG test pytest pytest-cov 
+INFO: Adding group test to lockfile
+Adding packages to test dev-dependencies: pytest, pytest-cov
+🔒 Lock successful
+Changes are written to pyproject.toml.
+Synchronizing working set with resolved packages: 6 to add, 0 to update, 0 to remove
+
+  ✔ Install iniconfig 2.0.0 successful
+  ✔ Install pytest-cov 4.1.0 successful
+  ✔ Install pluggy 1.4.0 successful
+  ✔ Install packaging 24.0 successful
+  ✔ Install pytest 8.1.1 successful
+  ✔ Install coverage 7.4.4 successful
+
+🎉 All complete!
+
+
 ```
 
 ### run FastAPI
@@ -61,7 +78,21 @@ $ uvicorn src.canary_sidecar.main:app
 $ uvicorn --app-dir src/canary_sidecar main:app
 ```
 
+### test
+```bash
+$ pytest
+===== test session starts ======
+platform darwin -- Python 3.12.2, pytest-8.1.1, pluggy-1.4.0
+rootdir: /Users/m2/code/nintelli/canary/canary-sidecar
+configfile: pyproject.toml
+plugins: anyio-4.3.0, cov-4.1.0
+collected 0 items                                                                                                              
+
+===== no tests ran in 0.00s =====
+```
+
 ### ref
 - https://github.com/pdm-project/pdm
 - https://www.python.org/doc/versions/
 - https://devguide.python.org/versions/
+- https://github.com/dMario24/president-speech
