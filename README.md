@@ -107,6 +107,24 @@ $ docker run -d --name sidecar-5 -p 8888:80 sidecar:0.2.5
 $ docker run -d --name sidecar-8 -p 8088:80 -v $(pwd)/src:/app/src --env RELOAD="--reload" sidecar:0.2.5
 ```
 
+## Integrated Testing
+```bash
+$ docker compose -f docker-compose.yml up -d --force-recreate --build
+
+$ docker compose -f docker-compose.yml ps
+NAME                IMAGE               COMMAND                  SERVICE             CREATED             STATUS              PORTS
+sidecar-api-1       sidecar-api         "docker-entrypoint.s…"   api                 14 seconds ago      Up 12 seconds       80/tcp
+sidecar-app-1       sidecar-app         "/bin/sh -c 'uvicorn…"   app                 13 seconds ago      Up 12 seconds       80/tcp
+sidecar-proxy-1     nginx               "/docker-entrypoint.…"   proxy               13 seconds ago      Up 12 seconds       0.0.0.0:7942->80/tcp
+```
+```bash
+$ docker compose -f docker-compose.yml down
+```
+
+## API
+- http://localhost:7982/sidecar/docs
+- http://localhost:7982/api/
+
 ### ref
 - https://github.com/pdm-project/pdm
 - https://www.python.org/doc/versions/
