@@ -91,8 +91,25 @@ collected 0 items
 ===== no tests ran in 0.00s =====
 ```
 
+### dockerizing
+```bash
+# BUILD
+$ docker build -t sidecar:0.2.5 .
+
+$ docker images
+REPOSITORY   TAG       IMAGE ID       CREATED         SIZE
+sidecar      0.2.5     6946f969d75d   5 seconds ago   88.8MB
+
+# RUN
+$ docker run -d --name sidecar-5 -p 8888:80 sidecar:0.2.5
+
+# RUN RELOAD
+$ docker run -d --name sidecar-8 -p 8088:80 -v $(pwd)/src:/app/src --env RELOAD="--reload" sidecar:0.2.5
+```
+
 ### ref
 - https://github.com/pdm-project/pdm
 - https://www.python.org/doc/versions/
 - https://devguide.python.org/versions/
 - https://github.com/dMario24/president-speech
+- https://pdm-project.org/latest/usage/advanced/#use-pdm-in-a-multi-stage-dockerfile
