@@ -1,4 +1,5 @@
 # canary-sidecar
+- Sample Code for Python PDM fastAPI Configuration
 
 ### init
 ```bash
@@ -52,6 +53,12 @@ Synchronizing working set with resolved packages: 9 to add, 0 to update, 0 to re
 
 🎉 All complete!
 
+```
+
+### run FastAPI
+```bash
+$ uvicorn src.canary_sidecar.main:app
+$ uvicorn --app-dir src/canary_sidecar main:app
 ```
 
 ### ref
