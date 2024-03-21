@@ -1,0 +1,15 @@
+[project]
+name = "canary-sidecar"
+version = "0.1.0"
+description = "Default template for PDM package"
+authors = [
+    {name = "pysatellite", email = "pysatellite@gmail.com"},
+]
+dependencies = []
+requires-python = "==3.12.*"
+readme = "README.md"
+license = {text = "GNU"}
+
+
+[tool.pdm]
+distribution = false
