@@ -45,7 +45,7 @@ const state = ref([
 
 async function update(event) {
   const jsonBody = {
-    ...(selectedState.value.code && { state: selectedState.value.code }),
+    ...(selectedState.value && { state: selectedState.value }),
     ...(selectedWorker.value && { worker: selectedWorker.value }),
     ...(selectedContact.value && { worker: selectedContact.value }),
     ...(selectedEta.value && { eta: selectedEta.value }),
