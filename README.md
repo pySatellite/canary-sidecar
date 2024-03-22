@@ -68,8 +68,6 @@ Synchronizing working set with resolved packages: 6 to add, 0 to update, 0 to re
   ✔ Install coverage 7.4.4 successful
 
 🎉 All complete!
-
-
 ```
 
 ### run FastAPI
@@ -108,6 +106,16 @@ $ docker run -d --name sidecar-8 -p 8088:80 -v $(pwd)/src:/app/src --env RELOAD=
 ```
 
 ## Integrated Testing
+- API Router 
+```mermaid
+graph LR
+
+http://proxy:7982/sidecar-->proxy-->sidecar
+http://proxy:7982/api-->proxy-->api
+http://proxy:7982/docs-->proxy-->FastapiSwagger
+```
+
+- RUN
 ```bash
 $ docker compose -f docker-compose.yml up -d --force-recreate --build
 
