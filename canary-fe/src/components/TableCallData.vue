@@ -46,6 +46,7 @@ const state = ref([
 
 async function update(event) {
 
+
   const jsonBody = {
     ...(columnsInfo.value.some(field => field.field === 'state') && { state: selectedState.value }),
     ...(columnsInfo.value.some(field => field.field === 'worker') && { worker: selectedWorker.value }),
