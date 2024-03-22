@@ -130,8 +130,9 @@ $ docker compose -f docker-compose.yml down
 ```
 
 ## API
-- http://localhost:7982/sidecar/docs
+- http://localhost:7982/sidecar
 - http://localhost:7982/api/
+- http://localhost:7982/docs
 
 ### ref
 - https://github.com/pdm-project/pdm
