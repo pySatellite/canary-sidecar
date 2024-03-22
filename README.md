@@ -129,6 +129,16 @@ sidecar-proxy-1     nginx               "/docker-entrypoint.…"   proxy        
 $ docker compose -f docker-compose.yml down
 ```
 
+## all-in-one docker
+```bash
+$ docker build -t sidecar:3 -f docker-all-in-on/Dockerfile .
+$ docker run -d --name sidecar3  -p 8080:80 -p 8864:8864 -p 7963:7963 sidecar:3
+
+$ curl http://localhost:8080/api/
+$ curl http://localhost:8080/sidecar/
+{"HI":"Sidecar"}%
+```
+
 ## API
 - http://localhost:7982/sidecar
 - http://localhost:7982/api/
@@ -140,3 +150,4 @@ $ docker compose -f docker-compose.yml down
 - https://devguide.python.org/versions/
 - https://github.com/dMario24/president-speech
 - https://pdm-project.org/latest/usage/advanced/#use-pdm-in-a-multi-stage-dockerfile
+- https://www.linuxtuto.com/how-to-install-python-3-12-on-ubuntu-22-04/
