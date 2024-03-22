@@ -1,0 +1,87 @@
+### INSERT
+# curl -X POST -H "Content-Type: application/json" -d '{ "id": "3", "title": "insert title", "views": 0 }' "https://localhost:7942/api/posts"
+POST http://localhost:7942/api/posts
+Content-Type: application/json
+
+{ "id": "3", "title": "insert title", "views": 0 }
+
+### UPDATE
+# curl -X PATCH -H "Content-Type: application/json" -d '{"views": 1}' http://localhost:7942/api/posts/3
+PATCH http://localhost:7942/api/posts/3
+Content-Type: application/json
+
+{"views": 1}
+
+### UPDATE
+# curl -X PUT -H "Content-Type: application/json" -d '{"title": "update titel", "views": 1}' http://localhost:7942/api/posts/3
+PUT http://localhost:7942/api/posts/3
+Content-Type: application/json
+
+{"title": "update title", "views": 2}
+
+###
+# curl -X PUT -H "Content-Type: application/json" -d '{"id": 3, "title": "insert title", "views": 0}' http://localhost:7942/api/posts
+PUT http://localhost:7942/api/posts
+Content-Type: application/json
+
+{"id": "3", "title": "insert title", "views": 0}
+
+### SELECT ALL
+# curl -X GET -H "Content-Type: application/json" http://localhost:7942/api/delays
+GET http://localhost:7942/api/delays
+Content-Type: application/json
+
+
+### SELECT ALL ORDER BY ID DESC
+# curl -X GET -H "Content-Type: application/json" http://localhost:7942/api/delays?_sort=-id
+GET http://localhost:7942/api/delays?_sort=-id
+Content-Type: application/json
+
+
+### SELECT ALL ORDER BY ID DESC
+# curl -X GET -H "Content-Type: application/json" http://localhost:7942/api/delays?state=발생
+GET http://localhost:7942/api/delays?delays?id=1
+Content-Type: application/json
+
+### SELECT WHERE Conditions
+# lt → <
+# lte → <=
+# gt → >
+# gte → >=
+# ne → !=
+# curl -X GET -H "Content-Type: application/json" http://localhost:7942/api/delays?id=1
+GET http://localhost:7942/api/delays?id=1
+Content-Type: application/json
+
+### SELECT WHERE Range
+# start
+# end
+# limit
+# curl -X GET -H "Content-Type: application/json" http://localhost:7942/api/delays?_start=1&_end=2_limit=10
+GET http://localhost:7942/api/delays?_start=0&_end=2_limit=1
+Content-Type: application/json
+
+//[
+//  {
+//    "id": "1",
+//    "table": "np_ord_user_agent",
+//    "state": "발생",
+//    "worker": "강의빈",
+//    "eta": ""
+//  },
+//  {
+//    "id": "2",
+//    "table": "sp_plan_window_event",
+//    "state": "확인",
+//    "worker": "오재혁",
+//    "eta": "11:00"
+//  }
+//]
+
+### DELETE
+# curl -X GET -H "Content-Type: application/json" http://localhost:7942/api/posts/3
+DELETE http://localhost:7942/api/posts/3
+Content-Type: application/json
+
+
+
