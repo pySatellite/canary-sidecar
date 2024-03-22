@@ -1,9 +1,9 @@
 FROM node:lts-alpine as build-stage
-ARG MODE=allinone
+ARG MODE=allinonefly
 WORKDIR /build
 COPY ./canary-fe/ ./
 RUN npm install
-RUN npm run build -- --mode allinone
+RUN npm run build -- --mode allinonefly
 
 FROM python:3.12.2 as all-in-on
 WORKDIR /app
