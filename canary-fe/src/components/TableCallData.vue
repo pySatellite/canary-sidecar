@@ -41,14 +41,16 @@ const state = ref([
   { name: '확인', code: '확인' },
   { name: '진행', code: '진행' },
   { name: '완료', code: '완료' },
+  { name: '불가', code: '불가' },
 ]);
 
 async function update(event) {
+
   const jsonBody = {
-    ...(selectedState.value && { state: selectedState.value }),
-    ...(selectedWorker.value && { worker: selectedWorker.value }),
-    ...(selectedContact.value && { worker: selectedContact.value }),
-    ...(selectedEta.value && { eta: selectedEta.value }),
+    ...(columnsInfo.value.some(field => field.field === 'state') && { state: selectedState.value }),
+    ...(columnsInfo.value.some(field => field.field === 'worker') && { worker: selectedWorker.value }),
+    ...(columnsInfo.value.some(field => field.field === 'contact') && { contact: selectedContact.value }),
+    ...(columnsInfo.value.some(field => field.field === 'eta') && { eta: selectedEta.value }),
   };
 
   await patchData(props.urmInfo, selectedId.value, jsonBody)
