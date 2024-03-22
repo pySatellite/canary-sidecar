@@ -5,7 +5,10 @@ description = "Default template for PDM package"
 authors = [
     {name = "pysatellite", email = "pysatellite@gmail.com"},
 ]
-dependencies = []
+dependencies = [
+    "fastapi>=0.110.0",
+    "uvicorn[standard]>=0.29.0",
+]
 requires-python = "==3.12.*"
 readme = "README.md"
 license = {text = "GNU"}
@@ -13,3 +16,9 @@ license = {text = "GNU"}
 
 [tool.pdm]
 distribution = false
+
+[tool.pdm.dev-dependencies]
+test = [
+    "pytest>=8.1.1",
+    "pytest-cov>=4.1.0",
+]

@@ -1,0 +1,164 @@
+{
+  "version": {
+    "info": "0.8.0"
+  },
+  "state": [
+    {
+      "name": "발생",
+      "id": "6ac5"
+    },
+    {
+      "name": "확인",
+      "id": "c690"
+    },
+    {
+      "name": "진행",
+      "id": "fb56"
+    },
+    {
+      "name": "완료",
+      "id": "7e45"
+    }
+  ],
+  "delays": [
+    {
+      "id": "1",
+      "table": "table-1",
+      "state": "발생",
+      "worker": "",
+      "eta": ""
+    },
+    {
+      "id": "2",
+      "table": "table-2",
+      "state": "확인",
+      "worker": "오재혁",
+      "eta": "11:00"
+    },
+    {
+      "id": "3",
+      "table": "table-3",
+      "state": "진행",
+      "worker": "전성수",
+      "eta": "10:00"
+    },
+    {
+      "id": "4",
+      "table": "table-4",
+      "state": "완료",
+      "worker": "전두환",
+      "eta": "10:00"
+    }
+  ],
+  "sources": [
+    {
+      "id": "1",
+      "table": "table-1",
+      "state": "발생",
+      "contact": "문창진(FC)",
+      "eta": ""
+    },
+    {
+      "id": "4",
+      "table": "table-4",
+      "state": "완료",
+      "contact": "오재혁(MF)",
+      "eta": "11:30"
+    }
+  ],
+  "interruptions": [
+    {
+      "id": "2",
+      "table": "table-2",
+      "state": "발생",
+      "worker": "오재혁"
+    },
+    {
+      "id": "3",
+      "table": "table-2",
+      "state": "진행",
+      "worker": "전정수"
+    }
+  ],
+  "recoveries": [
+    {
+      "id": "3",
+      "table": "table-3",
+      "state": "진행",
+      "worker": "전성수"
+    },
+    {
+      "id": "4",
+      "table": "table-4",
+      "state": "완료",
+      "worker": "전두환"
+    }
+  ],
+  "dashboard": {
+    "id": 1,
+    "labels": [
+      "DELAYS",
+      "SOURCE",
+      "PIPELINE",
+      "RECOVERIES"
+    ],
+    "datasets": [
+      {
+        "type": "bar",
+        "label": "발생",
+        "data": [
+          1,
+          1,
+          1,
+          0
+        ],
+        "backgroundColor": "#FF9966"
+      },
+      {
+        "type": "bar",
+        "label": "확인",
+        "data": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "backgroundColor": "#999999"
+      },
+      {
+        "type": "bar",
+        "label": "진행",
+        "data": [
+          1,
+          0,
+          1,
+          1
+        ],
+        "backgroundColor": "#FFCC33"
+      },
+      {
+        "type": "bar",
+        "label": "완료",
+        "data": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "backgroundColor": "#99CCCC"
+      }
+    ]
+  },
+  "posts": [
+    {
+      "id": "1",
+      "title": "update title",
+      "views": 100
+    },
+    {
+      "id": "2",
+      "title": "another title",
+      "views": 200
+    }
+  ]
+}
