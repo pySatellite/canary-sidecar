@@ -11,7 +11,7 @@ import Gate from './components/Gate.vue'
     <img alt="Vue logo" class="logo" src="./assets/canary-log.png" width="88%" />
 
     <div class="wrapper">
-      <Dashboard msg="data observability sys" />
+      <Dashboard msg="nIn data observability sys" />
     </div>
   </header>
 

@@ -1,7 +1,11 @@
 <script setup>
-import { ref, onMounted } from "vue";
+import {ref, onMounted, watch} from "vue";
 import Chart from 'primevue/chart';
-import {callData} from "@/common/global.js";
+import { useDashboardStore } from "@/stores/dashboard.js";
+import { storeToRefs } from "pinia";
+
+const dashboardStore = useDashboardStore()
+const { loading } = storeToRefs(dashboardStore)
 
 defineProps({
   msg: {
@@ -14,9 +18,13 @@ const chartData = ref();
 const chartOptions = ref();
 
 onMounted(() => {
-  callData(chartData, "dashboard/1");
+  dashboardStore.fetchData();
   chartOptions.value = setChartOptions();
 });
+function setData() {
+    chartData.value = dashboardStore.getData;
+}
+watch(loading, setData)
 
 const setChartOptions = () => {
   const documentStyle = getComputedStyle(document.documentElement);
@@ -34,7 +42,8 @@ const setChartOptions = () => {
       },
       legend: {
         labels: {
-          color: textColor
+          color: textColor,
+          boxWidth: 25
         }
       }
     },
@@ -78,7 +87,7 @@ const setChartOptions = () => {
       🔥
     </h2>
     <div class="card">
-      <Chart type="bar" :data="chartData" :options="chartOptions"b :width="500" :height="200"/>
+      <Chart type="bar" :data="chartData" :options="chartOptions"b :width="500" :height="200" v-if="chartData"/>
     </div>
   </div>
 </template>

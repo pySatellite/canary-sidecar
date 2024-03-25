@@ -12,9 +12,6 @@ import IconDatabase from "@/components/icons/IconDatabase.vue";
 import IconRedo from "@/components/icons/IconRedo.vue";
 
 const data = ref()
-onMounted(() => {
-  callData(data, "interruptions")
-})
 
 const tableData = ref()
 const columnsInfo = ref()
@@ -41,7 +38,7 @@ watch(() => data.value, (newVal) => {
     원천 데이터 이상 및 담당자 및 작업 상태
   </CallTable>
 
-  <CallTable urmInfo="interruptions">
+  <CallTable urmInfo="pipelines">
     <template #icon>
       <IconHourglass />
     </template>

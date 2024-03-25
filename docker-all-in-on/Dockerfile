@@ -3,7 +3,7 @@ ARG MODE=allinonefly
 WORKDIR /build
 COPY ./canary-fe/ ./
 RUN npm install
-RUN npm run build -- --mode allinonefly
+RUN npm run build -- --mode $MODE
 
 FROM python:3.12.2 as all-in-on
 WORKDIR /app
@@ -33,5 +33,7 @@ ENV PYTHONPATH=/app/__pypackages__/3.12/lib
 RUN mv /app/__pypackages__/3.12/bin/* /bin/
 
 EXPOSE 80
+
+ENV ENVIRONMENT=development
 
 CMD ["/bin/bash", "-c", "./start-all-in-on.sh"]

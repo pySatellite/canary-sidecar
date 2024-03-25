@@ -12,6 +12,9 @@ primary_region = 'nrt'
 [build.args]
   MODE="allinonefly"
 
+[env]
+  ENVIRONMENT="allinonefly"
+
 [http_service]
   internal_port = 80
   force_https = true

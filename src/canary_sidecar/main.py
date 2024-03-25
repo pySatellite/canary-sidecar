@@ -13,6 +13,11 @@ app = FastAPI()
 origins = [
     "http://localhost",
     "http://localhost:5173",
+    "http://localhost:5174",
+    "http://localhost:8080",
+    "http://127.0.0.1:8080",
+    "https://canary-sidecar.fly.dev",
+
 ]
 
 app.add_middleware(
@@ -52,7 +57,7 @@ def update_dashboard():
         data = requests.get(f'{env.api_url}/{label.lower()}', headers=headers).json()
 
         from collections import Counter
-        state_counts = Counter({"발생": 0, "확인": 0, "진행": 0, "완료": 0})
+        state_counts = Counter({"발생": 0, "확인": 0, "진행": 0, "완료": 0, "불가": 0})
         for item in data:
             state_counts[item['state']] += 1
 

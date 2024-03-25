@@ -131,9 +131,18 @@ $ docker compose -f docker-compose.yml down
 
 ## all-in-one docker
 ```bash
-$ docker build -t sidecar:3 -f docker-all-in-on/Dockerfile .
-$ docker run -d --name sidecar3  -p 8080:80 -p 8864:8864 -p 7963:7963 sidecar:3
+$ docker build --build-arg MODE=allinone -t sidecar:4 -f docker-all-in-on/Dockerfile .
+```
 
+```bash
+$ docker run -e ENVIRONMENT=allinone \
+-v $(pwd)/src:/app/src \
+-v $(pwd)/compose/api/data:/app/compose/api/data \
+-d --name sidecar2  \
+-p 8080:80 sidecar:2
+```
+
+```bash
 $ curl http://localhost:8080/api/
 $ curl http://localhost:8080/sidecar/
 {"HI":"Sidecar"}%

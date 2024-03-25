@@ -1,0 +1,132 @@
+{
+  "version": {
+    "info": "0.8.0"
+  },
+  "delays": [
+    {
+      "id": "1",
+      "table": "np_ord_user_agent",
+      "state": "완료",
+      "worker": "홍길동",
+      "eta": "11:11"
+    },
+    {
+      "id": "2",
+      "table": "sp_plan_window_event",
+      "state": "발생",
+      "worker": "",
+      "eta": "11:00"
+    },
+    {
+      "id": "3",
+      "table": "np_membership_purchase_prod",
+      "state": "완료",
+      "worker": "",
+      "eta": "10:00"
+    }
+  ],
+  "sources": [
+    {
+      "id": "1",
+      "table": "sp_plan_window_event",
+      "state": "완료",
+      "contact": "문창진(FC)",
+      "eta": "10:11"
+    }
+  ],
+  "pipelines": [
+    {
+      "id": "1",
+      "table": "sp_bill_pay_transact",
+      "state": "확인",
+      "worker": "임꺽정"
+    }
+  ],
+  "recoveries": [
+    {
+      "id": "1",
+      "table": "sp_plan_window_event",
+      "state": "진행",
+      "worker": "오재혁"
+    },
+    {
+      "id": "2",
+      "table": "np_membership_purchase_prod",
+      "state": "완료",
+      "worker": "전성수"
+    }
+  ],
+  "dashboard": [
+    {
+      "id": "1",
+      "labels": [
+        "DELAYS",
+        "SOURCES",
+        "PIPELINES",
+        "RECOVERIES"
+      ],
+      "datasets": [
+        {
+          "id": "1",
+          "type": "bar",
+          "label": "발생",
+          "data": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "backgroundColor": "#FF9966"
+        },
+        {
+          "id": "2",
+          "type": "bar",
+          "label": "확인",
+          "data": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "backgroundColor": "#999999"
+        },
+        {
+          "id": "3",
+          "type": "bar",
+          "label": "진행",
+          "data": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "backgroundColor": "#FFCC33"
+        },
+        {
+          "id": "4",
+          "type": "bar",
+          "label": "완료",
+          "data": [
+            2,
+            1,
+            0,
+            1
+          ],
+          "backgroundColor": "#99CCCC"
+        }
+      ]
+    }
+  ],
+  "posts": [
+    {
+      "id": "1",
+      "title": "update title",
+      "views": 100
+    },
+    {
+      "id": "2",
+      "title": "another title",
+      "views": 200
+    }
+  ]
+}

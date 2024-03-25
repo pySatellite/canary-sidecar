@@ -1,7 +1,7 @@
 <script setup>
 import { ref, watch, defineProps, onMounted } from 'vue'
-
-import { generateColumns, callData, patchData } from '../common/global.js'
+import { useDashboardStore } from "@/stores/dashboard.js";
+import {generateColumns, callData, patchData, updateDashboard, API_URL} from '../common/global.js'
 
 import DataTable from 'primevue/datatable';
 import Column from 'primevue/column';
@@ -9,9 +9,8 @@ import Dialog from "primevue/dialog";
 import InputText from "primevue/inputtext";
 import Button from "primevue/button";
 import Dropdown from 'primevue/dropdown';
-import { useToast } from 'primevue/usetoast';
 
-
+const dashboardStore = useDashboardStore()
 const props = defineProps(['urmInfo']);
 
 const data = ref()
@@ -46,7 +45,6 @@ const state = ref([
 
 async function update(event) {
 
-
   const jsonBody = {
     ...(columnsInfo.value.some(field => field.field === 'state') && { state: selectedState.value }),
     ...(columnsInfo.value.some(field => field.field === 'worker') && { worker: selectedWorker.value }),
@@ -57,6 +55,10 @@ async function update(event) {
   await patchData(props.urmInfo, selectedId.value, jsonBody)
 
   await callData(data, props.urmInfo)
+
+  await updateDashboard()
+
+  await dashboardStore.fetchData()
 
   visiblePopup.value = false;
 }
