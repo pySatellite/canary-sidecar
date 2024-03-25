@@ -151,3 +151,4 @@ $ curl http://localhost:8080/sidecar/
 - https://github.com/dMario24/president-speech
 - https://pdm-project.org/latest/usage/advanced/#use-pdm-in-a-multi-stage-dockerfile
 - https://www.linuxtuto.com/how-to-install-python-3-12-on-ubuntu-22-04/
+- https://docs.pydantic.dev/latest/concepts/pydantic_settings/

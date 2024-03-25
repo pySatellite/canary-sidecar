@@ -54,29 +54,29 @@
     {
       "id": "1",
       "table": "table-1",
-      "state": "발생",
+      "state": "진행",
       "contact": "문창진(FC)",
       "eta": ""
     },
     {
       "id": "4",
       "table": "table-4",
-      "state": "완료",
+      "state": "진행",
       "contact": "오재혁(MF)",
       "eta": "11:30"
     }
   ],
-  "interruptions": [
+  "pipelines": [
     {
       "id": "2",
       "table": "table-2",
-      "state": "발생",
+      "state": "완료",
       "worker": "오재혁"
     },
     {
       "id": "3",
       "table": "table-2",
-      "state": "진행",
+      "state": "완료",
       "worker": "전정수"
     }
   ],
@@ -84,71 +84,73 @@
     {
       "id": "3",
       "table": "table-3",
-      "state": "진행",
+      "state": "발생",
       "worker": "전성수"
     },
     {
       "id": "4",
       "table": "table-4",
-      "state": "완료",
+      "state": "발생",
       "worker": "전두환"
     }
   ],
-  "dashboard": {
-    "id": 1,
-    "labels": [
-      "DELAYS",
-      "SOURCE",
-      "PIPELINE",
-      "RECOVERIES"
-    ],
-    "datasets": [
-      {
-        "type": "bar",
-        "label": "발생",
-        "data": [
-          1,
-          1,
-          1,
-          0
-        ],
-        "backgroundColor": "#FF9966"
-      },
-      {
-        "type": "bar",
-        "label": "확인",
-        "data": [
-          1,
-          0,
-          0,
-          0
-        ],
-        "backgroundColor": "#999999"
-      },
-      {
-        "type": "bar",
-        "label": "진행",
-        "data": [
-          1,
-          0,
-          1,
-          1
-        ],
-        "backgroundColor": "#FFCC33"
-      },
-      {
-        "type": "bar",
-        "label": "완료",
-        "data": [
-          1,
-          1,
-          1,
-          1
-        ],
-        "backgroundColor": "#99CCCC"
-      }
-    ]
-  },
+  "dashboard": [
+    {
+      "id": "1",
+      "labels": [
+        "DELAYS",
+        "SOURCES",
+        "PIPELINES",
+        "RECOVERIES"
+      ],
+      "datasets": [
+        {
+          "type": "bar",
+          "label": "발생",
+          "data": [
+            1,
+            0,
+            0,
+            2
+          ],
+          "backgroundColor": "#FF9966"
+        },
+        {
+          "type": "bar",
+          "label": "확인",
+          "data": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "backgroundColor": "#999999"
+        },
+        {
+          "type": "bar",
+          "label": "진행",
+          "data": [
+            1,
+            2,
+            0,
+            0
+          ],
+          "backgroundColor": "#FFCC33"
+        },
+        {
+          "type": "bar",
+          "label": "완료",
+          "data": [
+            1,
+            0,
+            2,
+            0
+          ],
+          "backgroundColor": "#99CCCC"
+        }
+      ]
+    }
+  ],
   "posts": [
     {
       "id": "1",

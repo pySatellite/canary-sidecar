@@ -1,6 +1,6 @@
 [project]
 name = "canary-sidecar"
-version = "0.1.0"
+version = "0.2.0"
 description = "Default template for PDM package"
 authors = [
     {name = "pysatellite", email = "pysatellite@gmail.com"},
@@ -8,6 +8,8 @@ authors = [
 dependencies = [
     "fastapi>=0.110.0",
     "uvicorn[standard]>=0.29.0",
+    "requests>=2.31.0",
+    "pydantic-settings>=2.2.1",
 ]
 requires-python = "==3.12.*"
 readme = "README.md"

@@ -14,7 +14,7 @@ const chartData = ref();
 const chartOptions = ref();
 
 onMounted(() => {
-  callData(chartData, "dashboard");
+  callData(chartData, "dashboard/1");
   chartOptions.value = setChartOptions();
 });
 
