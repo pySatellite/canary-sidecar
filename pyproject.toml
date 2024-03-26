@@ -1,6 +1,6 @@
 [project]
 name = "canary-sidecar"
-version = "0.2.0"
+version = "0.9.2"
 description = "Default template for PDM package"
 authors = [
     {name = "pysatellite", email = "pysatellite@gmail.com"},
